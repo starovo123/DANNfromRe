@@ -53,6 +53,8 @@ def train(epoch_num, n_gpu, model, train_dataloader, dev_dataloader, optimizer, 
         all_preds_t = np.array([], dtype=int)
         all_labels_t = np.array([], dtype=int)
 
+        len_dataloader = len(train_dataloader)
+
         for step, batch in enumerate(train_dataloader):
 
             model.train()
