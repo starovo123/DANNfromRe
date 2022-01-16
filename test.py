@@ -23,7 +23,7 @@ def test(config, model_times, label_list):
     if config.log_time != "":
         r_time = config.log_time
     else:
-        r_time = time.strftime("%Y-%m-%d-%H:%M:%S", time.localtime(time.time()))
+        r_time = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime(time.time()))
     if not os.path.exists(config.log_dir + r_time):
         os.makedirs(config.log_dir + r_time)
     log_file = config.log_dir + r_time + '/result.txt'
