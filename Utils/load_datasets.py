@@ -21,8 +21,9 @@ def load_tsv_datasets(filename, set_type):
             continue
         guid = i
         text_a = line[0]
-        label = line[1]
-        examples.append(InputExample(guid=guid, text_a=text_a, text_b=None, label=label))
+        text_b = line[1]
+        label = line[2]
+        examples.append(InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
     return examples
 
 def load_data(data_dir, tokenizer, max_length, batch_size, data_type, label_list, format_type=0):

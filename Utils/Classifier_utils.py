@@ -61,7 +61,7 @@ def convert_example_to_feature(examples, label_list, max_seq_length, tokenizer):
         tokens_b = None
         if example.text_b:
             tokenizer.tokenize(example.text_b)
-            _truncate_seq_pair(tokens_a, tokens_b, max_seq_length-3)    # 减去[CLS],[SEP]x2
+            _truncate_seq_pair(tokens_a, tokens_b, max_seq_length-4)    # 减去[CLS],[SEP]x2
         else:
             if len(tokens_a) > max_seq_length-2:
                 tokens_a = tokens_a[:(max_seq_length-2)]
@@ -70,7 +70,7 @@ def convert_example_to_feature(examples, label_list, max_seq_length, tokenizer):
         segment_ids = [0] * len(tokens)     # 句子标识，0表示第一个句子，1表示第二个句子
 
         if tokens_b:
-            tokens += tokens_b + ["[SEP]"]
+            tokens += ["[CLS]"] + tokens_b + ["[SEP]"]
             segment_ids += [1] * (len(tokens_b)+1)
 
         input_ids = tokenizer.convert_tokens_to_ids(tokens)
