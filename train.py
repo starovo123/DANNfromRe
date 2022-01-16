@@ -86,11 +86,11 @@ def train(epoch_num, n_gpu, model, train_dataloader, dev_dataloader, optimizer, 
                 loss_class = loss_class.mean()
                 loss_domain_s = loss_domain_s.mean()
                 loss_domain_t = loss_domain_t.mean()
-            loss = loss_class.item() + loss_domain_s.item()+ loss_domain_t.item()
+            loss = loss_class + loss_domain_s + loss_domain_t
             if gradient_accumulation_steps > 1:
                 loss = loss/gradient_accumulation_steps
             loss.backward()
-            epoch_loss += loss   # epoch的loss为所有batch_loss之和
+            epoch_loss += loss.item()   # epoch的loss为所有batch_loss之和
 
 
             preds_s = logits_class.detach().cpu().numpy()
