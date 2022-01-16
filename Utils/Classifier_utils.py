@@ -71,7 +71,7 @@ def convert_example_to_feature(examples, label_list, max_seq_length, tokenizer):
 
         if tokens_b:
             tokens += ["[CLS]"] + tokens_b + ["[SEP]"]
-            segment_ids += [1] * (len(tokens_b)+1)
+            segment_ids += [1] * (len(tokens_b)+2)
 
         input_ids = tokenizer.convert_tokens_to_ids(tokens)
 
