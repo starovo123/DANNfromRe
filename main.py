@@ -16,6 +16,8 @@ from train import train, evaluate
 
 def main(config, model_times, label_list):
 
+    print("label_list in main:", label_list)
+
     if not os.path.exists(config.output_dir + model_times):
         os.makedirs(config.output_dir + model_times)
 
