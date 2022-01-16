@@ -12,8 +12,7 @@ if __name__ == '__main__':
     model_name = 'BertLSTM'
     # label_list = [u'ด้านเศรษฐกิจ', u'ด้านสังคม', u'ด้านความมั่นคง', u'ข่าวทำเนียบรัฐบาล', u'ด้านวัฒนธรรมท่องเที่ยวฯ']
     label_list = [u'นิติศาสตร์', u'วิศวกรรมไฟฟ้า', u'วิศวกรรมอุตสาหการ', u'วิจัยการศึกษา', u'Chemical Engineering', u'การบริหารการพยาบาล', u'นิเทศศาสตรพัฒนาการ', u'มัธยมศึกษา', u'บริหารการศึกษา', u'โสตทัศนศึกษา']
-    # label_list = ['GNM', 'SNT', 'TTL', 'BLD', 'BDS', 'CLT', 'RLW', 'LTT', 'ROD', 'SAT', 'EPR', 'FML', 'SCL', 'PNM',
-    #             'HST']
+    # label_list = ['GNM', 'SNT', 'TTL', 'BLD', 'BDS', 'CLT', 'RLW', 'LTT', 'ROD', 'SAT', 'EPR', 'FML', 'SCL', 'PNM', 'HST']
 
     data_dir = 'D:/data/en-th-mix'
     output_dir = 'D:/Code/DANNfromRe/.output/'
