@@ -26,7 +26,7 @@ def train(epoch_num, n_gpu, model, train_dataloader, dev_dataloader, optimizer, 
             不用返回任何东西，保存模型的参数即可
     '''
 
-    log_time = time.strftime("%Y-%m-%d-%H:%M:%S", time.localtime(time.time()))
+    log_time = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime(time.time()))
     log_file = log_dir + log_time + '/log.txt'
 
     if not os.path.exists(log_dir + log_time):
