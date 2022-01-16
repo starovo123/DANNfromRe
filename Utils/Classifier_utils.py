@@ -60,7 +60,7 @@ def convert_example_to_feature(examples, label_list, max_seq_length, tokenizer):
         tokens_a = tokenizer.tokenize(example.text_a)   #分词
         tokens_b = None
         if example.text_b:
-            tokenizer.tokenize(example.text_b)
+            tokens_b = tokenizer.tokenize(example.text_b)
             _truncate_seq_pair(tokens_a, tokens_b, max_seq_length-4)    # 减去[CLS],[SEP]x2
         else:
             if len(tokens_a) > max_seq_length-2:

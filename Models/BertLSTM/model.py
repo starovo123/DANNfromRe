@@ -6,7 +6,7 @@ from torch.nn import CrossEntropyLoss
 import torch.nn.functional as F
 
 from Models.Linear import Linear
-
+from Utils.functions import ReverseLayerF
 
 class BertLSTM(BertPreTrainedModel):
 
